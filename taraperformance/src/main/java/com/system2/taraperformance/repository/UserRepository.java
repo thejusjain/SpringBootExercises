@@ -9,6 +9,6 @@ import java.util.List;
 @Repository
 public interface UserRepository extends JpaRepository<Users, String> {
 
-    List<String> getAccountIds();
+//    List<String> getAccountIds();
 
 }

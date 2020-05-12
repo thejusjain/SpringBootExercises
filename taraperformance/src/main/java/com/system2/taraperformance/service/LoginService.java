@@ -20,14 +20,17 @@ public class LoginService {
 
     public int loginUser(Users users) {
         Users dbUser;
+        System.out.println("Checking the password credibility");
         try {
             dbUser = userRepository.findById(users.getUsername()).get();
         } catch (NoSuchElementException e) {
             return -1;
         }
         if (dbUser.getPassword().equals(users.getPassword())) {
+            System.out.println("Valid credentials");
             return 1;
         } else {
+            System.out.println("Invalid credentials");
             return 0;
         }
     }

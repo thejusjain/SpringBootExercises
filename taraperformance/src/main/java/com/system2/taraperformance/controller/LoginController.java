@@ -15,6 +15,8 @@ public class LoginController {
 
     @RequestMapping(method = RequestMethod.POST, value = "/login")
     public int loginUser(@RequestBody Users users) {
+        System.out.println(users.getUsername());
+        System.out.println(users.getPassword());
         int status = loginService.loginUser(users);
         return status;
 //        if (status == 1) {
